@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
 // ── CONFIG: replace these to go live ───────────────────────────
-const SUPABASE_URL = https:https://wpdjctyndhlwxnyzqkko.supabase.co
-const SUPABASE_KEY = sb_publishable_eefk5pQipqpbdsBj55TR9w_rqd1mnMW
-const LIVE = !SUPABASE_URL.includes("Ysb_publishable_mjqD2Ob2psc-3uBEOVR_8g_TX-w2l5FOUR_PROJECT");
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "";
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY || "";
+const LIVE = Boolean(SUPABASE_URL && SUPABASE_KEY);
 
 // ── Supabase helpers ─────────────────────────────────────────────
 const SB_H = () => ({ "Content-Type":"application/json", apikey:SUPABASE_KEY, Authorization:`Bearer ${SUPABASE_KEY}`, Prefer:"return=representation" });
